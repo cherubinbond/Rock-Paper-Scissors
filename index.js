@@ -9,7 +9,7 @@ function getComputerChoice() {
 console.log(getComputerChoice())
 
 function getHumanChoice() {
-    const question = prompt("input your choice");
+    const question = window.prompt();
     return question;
 }
 console.log(getHumanChoice());
@@ -24,12 +24,12 @@ function playRound(humanChoice, computerChoice) {
     } else if ((humanChoice == "rock" && computerChoice == "scissors") ||
         (humanChoice == "paper" && computerChoice == "rock") ||
         (humanChoice == "scissors" && computerChoice == "paper")) {
-        humanScore = humanScore + 1;
+        humanScore = humanScore++;
         return "You win! " + humanChoice + " beats " + computerChoice;
     }
 
     else {
-        computerScore = computerScore + 1;
+        computerScore = computerScore++;
         return "You lose! " + computerChoice + " beats " + humanChoice;
     }
 }
